@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+:root {
+  --welcome-bg: rgb(247, 235, 212);
+  --navbar-bg:  rgba(247, 235, 212, 0.8);
+  --project-bg: #98c379;
+  --project-tile-bg: #282c34;
+  --contact-bg: #61afef;
+  --navlink-hover: #abb2bf;
+  --white-color: white;
+  --welcome-title-color: rgb(41, 41, 41);
+  --sub-title-color: white;
+  --footer-border-color: red;
+  --animation-time: 2.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  font-family: Helvetica;
+  line-height: 1.5;
+}
+
+#navbar {
+  width: 100%;
+  background-color: var(--navbar-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+
+.navlink {
+  text-decoration: none;
+  color: var(--welcome-title-color);
+  display: block;
+  font-size: 22px;
+  transition: background-color 0.3s ease-out;
+}
+
+#welcome-section {
+  background-color: var(--welcome-bg);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2 {
+  color: var(--welcome-title-color);
+  font-family: "Source Code Pro", serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: lighter;
+}
+
+span.fab,
+span.fas {
+  font-weight: lighter;
+}
+
+#projects {
+  background-color: var(--project-bg);
+  padding-top: 80px;
+}
+
+#project-section-title {
+  margin-bottom: 20px;
+}
+
+#project-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-tile {
+  background-color: var(--project-tile-bg);
+  max-width: 30%;
+  box-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
+  margin: 15px;
+}
+
+.project-image {
+  max-width: 100%;
+}
+
+.project-link {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+.project-title {
+  text-align: center;
+}
+
+.project-desc {
+  padding: 10px;
+  text-align: left;
+}
+
+#contact {
+  width: 100%;
+  height: 80vh;
+  background-color: var(--contact-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-title {
+  font-size: 70px;
+}
+
+#social-links-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  font-family: 'Source Code Pro'
+}
+
+.social-link {
+  color: var(--white-color);
+  font-family: "Source Code Pro";
+  font-size: 34px;
+  padding: 15px 20px;
+}
+
+#footer {
+  height: 20vh;
+  background-color: var(--contact-bg);
+  border-top: 6px solid var(--footer-border-color);
+}
+
+.typewriter h1 {
+  overflow: hidden;
+  border-right: 0.15em solid var(--white-color);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing var(--animation-time) steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(221, 60, 60);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--white-color);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeIn linear 2s;
+  animation-delay: var(--animation-time);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  #project-grid {
+    flex-direction: column;
+  }
+
+  .project-tile {
+    max-width: 75%;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    text-align: center;
+  }
+}
