@@ -1,17 +1,15 @@
+/* Fonts */
+
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
+/* Variables and Defaults*/
+
 :root {
-  --welcome-bg: rgb(247, 235, 212);
-  --navbar-bg:  rgba(247, 235, 212, 0.8);
-  --project-bg: #98c379;
-  --project-tile-bg: #282c34;
-  --contact-bg: #61afef;
-  --navlink-hover: #abb2bf;
-  --white-color: white;
-  --welcome-title-color: rgb(41, 41, 41);
-  --sub-title-color: white;
-  --footer-border-color: red;
-  --animation-time: 2.5s;
+  --main-bg-color: 247, 235, 212;
+  --main-white-color: 255, 255, 255;
+  --main-color: 41, 41, 41;
+  font-size: 16px;
+  font-family: "Source Code Pro", serif;
 }
 
 * {
@@ -30,15 +28,18 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-size: 16px;
-  font-family: Helvetica;
-  line-height: 1.5;
+/* Utility Classes */
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
 }
+
+/* Nav Bar */
 
 #navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
+  background-color: rgba(var(--navbar-bg-color), 0.8);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -46,7 +47,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 50;
 }
 
 #navbar ul {
@@ -56,48 +57,43 @@ body {
   gap: 20px;
 }
 
-
 .navlink {
   text-decoration: none;
-  color: var(--welcome-title-color);
+  color: rgb(var(--main-color));
   display: block;
-  font-size: 22px;
+  font-size: 1.5rem;
   transition: background-color 0.3s ease-out;
 }
 
 #welcome-section {
-  background-color: var(--welcome-bg);
+  background-color: rgb(var(--main-bg-color));
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
 }
+
+/* Headings */
 
 h1,
 h2 {
-  color: var(--welcome-title-color);
-  font-family: "Source Code Pro", serif;
+  color: rgb(var(--main-color));
   text-align: center;
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 1.5rem;
   font-weight: lighter;
 }
 
-span.fab,
-span.fas {
-  font-weight: lighter;
-}
+/* Sections */
 
 #projects {
-  background-color: var(--project-bg);
+  background-color: rgb(var(--main-bg-color));
   padding-top: 80px;
 }
 
@@ -109,15 +105,13 @@ span.fas {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .project-tile {
-  background-color: var(--project-tile-bg);
+  background-color: rgb(var(--main-bg-color));
   max-width: 30%;
   box-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
-  margin: 15px;
+  margin: 1rem;
 }
 
 .project-image {
@@ -126,7 +120,7 @@ span.fas {
 
 .project-link {
   text-decoration: none;
-  color: var(--white-color);
+  color: rgb(var(--main-color));
 }
 
 .project-title {
@@ -141,47 +135,49 @@ span.fas {
 #contact {
   width: 100%;
   height: 80vh;
-  background-color: var(--contact-bg);
+  background-color: rgb(var(--main-bg-color));
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 #contact-title {
-  font-size: 70px;
+  font-size: 4.5rem;
 }
 
-#social-links-container {
+#social-links-container 
   display: flex;
-  justify-content: center;
   width: 100%;
   flex-wrap: wrap;
-  padding-top: 50px;
-  padding-bottom: 100px;
-  font-family: 'Source Code Pro'
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+span.fab,
+span.fas {
+  font-weight: lighter;
 }
 
 .social-link {
-  color: var(--white-color);
+  color: rgb(var(--main-color));
   font-family: "Source Code Pro";
-  font-size: 34px;
-  padding: 15px 20px;
+  font-size: 2rem;
+  padding: 1rem 1.2rem;
 }
 
 #footer {
   height: 20vh;
-  background-color: var(--contact-bg);
-  border-top: 6px solid var(--footer-border-color);
+  background-color: rgb(var(--main-bg-color));
 }
+
+/* Animations */
 
 .typewriter h1 {
   overflow: hidden;
-  border-right: 0.15em solid var(--white-color);
+  border-right: 0.15em solid rgb(var(--main-color));
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  animation: typing var(--animation-time) steps(40, end),
+  animation: typing 2.5s steps(40, end),
     blink-caret 0.75s step-end infinite;
 }
 
@@ -223,7 +219,7 @@ span.fas {
     border-color: transparent;
   }
   50% {
-    border-color: var(--white-color);
+    border-color: rgb(var(--white-color));
   }
 }
 
@@ -231,7 +227,7 @@ span.fas {
   opacity: 0;
   display: inline-block;
   animation: fadeIn linear 2s;
-  animation-delay: var(--animation-time);
+  animation-delay: 2.5s;
   animation-fill-mode: forwards;
 }
 
@@ -243,6 +239,8 @@ span.fas {
     opacity: 1;
   }
 }
+
+/* Media Queries */
 
 @media (max-width: 500px) {
   #project-grid {
