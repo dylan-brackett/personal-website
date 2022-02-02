@@ -144,7 +144,7 @@ h2 {
   font-size: 4.5rem;
 }
 
-#social-links-container 
+#social-links-container {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
