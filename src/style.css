@@ -35,26 +35,37 @@ html {
   justify-content: center;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 /* Nav Bar */
 
 #navbar {
   width: 100%;
-  background-color: rgba(var(--navbar-bg-color), 0.8);
+  background-color: rgba(var(--main-bg-color), 0.8);
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 50;
 }
 
+#nav-logo a {
+  font-size: 3rem;
+  color: rgb(var(--main-color));
+  text-decoration: none;
+  padding-left: 0.8rem;
+}
+
 #navbar ul {
   list-style: none;
   display: flex;
-  padding: 20px;
-  gap: 20px;
+  padding: 1.2rem;
+  gap: 2rem;
 }
 
 .navlink {
@@ -82,15 +93,27 @@ h2 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2.8rem;
   font-weight: lighter;
 }
 
 /* Sections */
+
+#title {
+  margin-bottom: 0.8rem;
+}
+
+/* #title h1 {
+  font-size: 3.2rem;
+}
+
+#sub-title h2 {
+  font-size: 2rem;
+} */
 
 #projects {
   background-color: rgb(var(--main-bg-color));
@@ -98,7 +121,7 @@ h2 {
 }
 
 #project-section-title {
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 
 #project-grid {
@@ -108,10 +131,14 @@ h2 {
 }
 
 .project-tile {
-  background-color: rgb(var(--main-bg-color));
+  background-color: rgb(var(--main-color));
   max-width: 30%;
-  box-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
+  border-radius: 2%;
+  overflow: hidden;
+  box-shadow: 2px 2px 4px;
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-image {
@@ -120,16 +147,45 @@ h2 {
 
 .project-link {
   text-decoration: none;
-  color: rgb(var(--main-color));
+  color: rgb(var(--main-bg-color));
 }
 
 .project-title {
+  color: rgb(var(--main-bg-color));
   text-align: center;
 }
 
 .project-desc {
-  padding: 10px;
-  text-align: left;
+  color: rgb(var(--main-bg-color));
+  padding: 0.5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+
+.project-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.project-btn {
+  height: 3rem;
+  width: 45%;
+  border-radius: 0.5rem;
+  background-color: rgb(var(--main-bg-color));
+  color: rgb(var(--main-color));
+  border: none;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+}
+
+.project-btn:hover {
+  filter: brightness(0.8);
+  transition: 0.25s;
 }
 
 #contact {
@@ -171,14 +227,41 @@ span.fas {
 
 /* Animations */
 
+.add-arrow {
+  transition: all 0.2s linear 0s;
+}
+
+.add-arrow:before {
+  content: "\f178";
+  font-family: "Font Awesome 5 Pro";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 40px;
+  transition: all 0.2s linear 0s;
+}
+
+.add-arrow:hover {
+  text-indent: -20px;
+}
+
+.add-arrow:hover::before {
+  opacity: 1;
+  text-indent: 0px;
+}
+
 .typewriter h1 {
   overflow: hidden;
   border-right: 0.15em solid rgb(var(--main-color));
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  animation: typing 2.5s steps(40, end),
-    blink-caret 0.75s step-end infinite;
+  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .hover-underline-animation {
@@ -187,7 +270,7 @@ span.fas {
 }
 
 .hover-underline-animation:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
