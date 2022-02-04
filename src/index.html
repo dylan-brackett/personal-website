@@ -2,14 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Dylan Brackett</title>
     <link rel="stylesheet" href="./style.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./script.js"></script>
   </head>
 
   <body>
@@ -52,17 +47,26 @@
     <main>
       <section id="welcome-section" class="flex-center">
         <div id="title" class="typewriter">
-          <h1>Hi, my name is Dylan Brackett</h1>
+          <h1>
+            Hi, my name is <span class="em-font-color">Dylan Brackett</span>
+          </h1>
         </div>
 
         <div id="sub-title">
-          <h2 class="fade-in"><em>And I'm A Full Stack Web Developer</em></h2>
+          <h2 class="fade-in">
+            <em
+              >And I'm A <span class="em-font-color">Full Stack</span> Web
+              Developer</em
+            >
+          </h2>
         </div>
       </section>
 
       <section id="projects">
-        <h1 id="project-section-title">Some of my Projects</h1>
-        <div id="project-grid" class="flex-center">
+        <h1 class="scroll-fade" id="project-section-title">
+          Some of my Projects
+        </h1>
+        <div id="project-grid" class="flex-center scroll-fade">
           <div class="project-tile flex-center">
             <a href="">
               <img
@@ -115,21 +119,72 @@
             href="https://github.com/dylan-brackett"
             target="_blank"
             class="social-link"
-            ><span class="fab fa-github"> Github</span></a
+            ><span class="fab fa-github"></span> Github</a
           >
-          <a href="" class="social-link"
-            ><span class="fab fa-linkedin"> LinkedIn</span></a
+          <a
+            href="https://www.linkedin.com/in/dylan-brackett-50035817b/"
+            target="_blank"
+            class="social-link"
+            ><span class="fab fa-linkedin"></span> LinkedIn</a
           >
-          <a href="" class="social-link"
-            ><span class="fas fa-at"> E-Mail</span></a
+          <a href="mailto:dylan.t.brackett@gmail.com" class="social-link"
+            ><span class="fas fa-at"></span> E-Mail</a
           >
-          <a href="" class="social-link"
-            ><span class="fas fa-mobile-alt"> Phone</span></a
+          <a href="tel:423-331-6216" class="social-link"
+            ><span class="fas fa-mobile-alt"></span> Phone</a
           >
         </div>
+
+        <form action="mailto:dylan.t.brackett@gmail.com" class="form">
+          <div class="id">
+            <div class="name">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                value=""
+                placeholder="John Smith"
+                type="text"
+                name="name"
+                tabindex="1"
+              />
+            </div>
+            <div class="email">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                value=""
+                placeholder="john@example.com"
+                type="text"
+                name="email"
+                tabindex="2"
+              />
+            </div>
+          </div>
+
+          <div class="message">
+            <label id="message" for="message">Message</label>
+
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="10"
+              tabindex="3"
+              value=""
+              placeholder="Your message"
+            ></textarea>
+            <button type="submit" tabindex="4">SUBMIT</button>
+          </div>
+        </form>
       </section>
 
-      <footer id="footer"></footer>
+      <!-- <footer id="footer"></footer> -->
     </main>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./script.js"></script>
 </html>
