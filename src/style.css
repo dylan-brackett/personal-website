@@ -27,6 +27,7 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background-color: rgb(var(--main-bg-color));
 }
 
 /* Utility Classes */
@@ -218,10 +219,6 @@ h2 {
   flex-direction: column;
 }
 
-#contact-title {
-  font-size: 4.5rem;
-}
-
 #social-links-container {
   display: flex;
   width: 100%;
@@ -253,6 +250,7 @@ span.fas {
   display: flex;
   flex-direction: column;
   width: 50%;
+  padding-bottom: 6rem;
 }
 
 .form label {
@@ -340,11 +338,11 @@ textarea {
 
 .typewriter h1 {
   overflow: hidden;
-  border-right: 0.15em solid rgb(var(--main-color));
+  border-right: 0.15em solid rgb(var(--main-red-color));
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .hover-underline-animation {
@@ -385,7 +383,7 @@ textarea {
     border-color: transparent;
   }
   50% {
-    border-color: rgb(var(--white-color));
+    border-color: rgb(var(--main-red-color));
   }
 }
 
@@ -393,7 +391,7 @@ textarea {
   opacity: 0;
   display: inline-block;
   animation: fadeIn linear 2s;
-  animation-delay: 2.5s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 
@@ -410,11 +408,15 @@ textarea {
 
 @media screen and (max-width: 900px) {
   h1 {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   h2 {
     font-size: 1rem;
+  }
+
+  .project-btn {
+    font-size: 0.8rem;
   }
 
   #project-grid {
@@ -422,7 +424,11 @@ textarea {
   }
 
   .project-tile {
-    max-width: 75%;
+    max-width: 100%;
+  }
+
+  #contact {
+    padding-top: 30rem;
   }
 
   #navbar {
